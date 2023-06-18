@@ -17,17 +17,29 @@ void display() {
     Serial.print(scratch);
 }
 
-void on_change(double const /* new_value */) {
-    Serial.print("on_change(...): ");
-    display();
+void on_change(double const new_value) {
+    static int last = average();
+    if (last != (int) new_value) {
+        last = (int) new_value;
+        Serial.print("on_change(...): ");
+        display();
+    }
 }
 
-void on_upper(double const /* new_value */) {
-    Serial.print("on_upper(...): ");
+void on_upper(double const new_value) {
+    static int last = average();
+    if (last != (int) new_value) {
+        last = (int) new_value;
+        Serial.print("on_upper(...): ");
+    }
 }
 
-void on_lower(double const /* new_value */) {
-    Serial.print("on_lower(...): ");
+void on_lower(double const new_value) {
+    static int last = average();
+    if (last != (int) new_value) {
+        last = (int) new_value;
+        Serial.print("on_lower(...): ");
+    }
 }
 
 void setup() {

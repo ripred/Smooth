@@ -1,5 +1,6 @@
 # Smooth
-Keep smooth running averages without using arrays! The sample size is adjustable at runtime. Additionally the average is available and accurate even before N samples have been received.
+Keep smooth running averages without using arrays! No arrays, No Looping, Fast and Constant Time regardless of the sample window size! 
+The sample size is adjustable at runtime. Additionally the average is available and accurate even before N samples have been received.
 
 ```
 #include <Arduino.h>

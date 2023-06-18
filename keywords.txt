@@ -1,0 +1,24 @@
+########################################################
+# Syntax Coloring Map for Arduino Smooth Library
+########################################################
+# https://github.com/ripred/Smooth
+########################################################
+# Datatypes (KEYWORD1)
+########################################################
+Smooth                   KEYWORD1
+
+########################################################
+# Methods, Functions, and Globals (KEYWORD2)
+########################################################
+Smooth                   KEYWORD2
+add                      KEYWORD2
+get_avg                  KEYWORD2
+get_count                KEYWORD2
+get_window               KEYWORD2
+set_window               KEYWORD2
+reset                    KEYWORD2
+
+########################################################
+# Constants (LITERAL1)
+########################################################
+

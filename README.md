@@ -37,3 +37,46 @@ void loop() {
     Serial.print(scratch);
 }
 ```
+
+example output:
+```
+count:    1, sample:   0, average:   0
+count:    2, sample:   0, average:   0
+count:    3, sample:   1, average:   0
+count:    4, sample:   2, average:   0
+count:    5, sample:   2, average:   1
+count:    6, sample:   3, average:   1
+count:    7, sample:   2, average:   1
+count:    8, sample:   3, average:   1
+count:    9, sample:   4, average:   1
+count:   10, sample:   4, average:   2
+count:   11, sample:   3, average:   2
+count:   12, sample:   4, average:   2
+count:   13, sample:   3, average:   2
+count:   14, sample:   4, average:   2
+count:   15, sample:   3, average:   2
+count:   16, sample:   4, average:   2
+count:   17, sample:   4, average:   2
+count:   18, sample:   4, average:   3
+count:   19, sample:   4, average:   3
+count:   20, sample:   4, average:   3
+count:   21, sample:   3, average:   3
+count:   22, sample:   3, average:   3
+count:   23, sample:   2, average:   3
+count:   24, sample:   3, average:   3
+count:   25, sample:   3, average:   3
+count:   26, sample:   2, average:   2
+count:   27, sample:   1, average:   2
+count:   28, sample:   0, average:   2
+count:   29, sample:   1, average:   2
+count:   30, sample:   1, average:   2
+count:   31, sample:   1, average:   2
+count:   32, sample:   2, average:   2
+count:   33, sample:   3, average:   2
+count:   34, sample:   3, average:   2
+count:   35, sample:   4, average:   2
+count:   36, sample:   3, average:   2
+count:   37, sample:   3, average:   2
+count:   38, sample:   3, average:   2
+count:   39, sample:   2, average:   2
+```

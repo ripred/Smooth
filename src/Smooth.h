@@ -11,14 +11,26 @@
 
 #include <inttypes.h>
 
+typedef void (*FNcallback)(double const /* new_value */);
+
 class Smooth {
     private:
     int set_size;
     int count;
-    double avg;
+    FNcallback cbchange;
+    FNcallback cblower;
+    FNcallback cbupper;
+
+    double avg, last, upper, lower;
 
     public:
     Smooth(int const window = 1, int const c = 0, double const a = 0.0);
+
+    void tick();
+
+    void set_change(FNcallback const cb);
+    void set_lower(FNcallback const cb, int const value);
+    void set_upper(FNcallback const cb, int const value);
 
     // get the current running average
     double get_avg() const;

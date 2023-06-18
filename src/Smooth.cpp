@@ -1,5 +1,5 @@
 /*
- * Smooth.h
+ * Smooth.cpp
  * 
  * implementation file for Smooth averaging class
  * 
@@ -13,7 +13,32 @@ Smooth::Smooth(int const window, int const c, double const a) :
         count(c),
         avg(a)
     { 
+        last = avg;
+        upper = 0.0;
+        lower = 0.0;
+        cbupper = nullptr;
+        cblower = nullptr;
     }
+
+
+// register optional callbacks for change, and upper and lower bounds
+void Smooth::set_change(FNcallback const cb)
+{
+    cbchange = cb;
+}
+
+void Smooth::set_lower(FNcallback const cb, int const value)
+{
+    cblower = cb;
+    lower = value;
+}
+
+void Smooth::set_upper(FNcallback const cb, int const value)
+{
+    cbupper = cb;
+    upper = value;
+}
+
 
 // get the current running average
 double Smooth::get_avg() const
@@ -59,6 +84,26 @@ double Smooth::add(double const val)
     double val_coef = 1.0 / double(num);
 
     avg = avg * run_coef + val * val_coef;
+
+    if (last != avg) {
+        last = avg;
+
+        if (nullptr != cbchange) {
+            cbchange(avg);
+        }
+
+        if (avg < lower) {
+            if (nullptr != cblower) {
+                cblower(avg);
+            }
+        }
+
+        if (avg >= upper) {
+            if (nullptr != cbupper) {
+                cbupper(avg);
+            }
+        }
+    }
 
     return avg;
 }

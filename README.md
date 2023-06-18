@@ -26,14 +26,14 @@ void loop() {
     sample += updown;
 
     // add it to the running average
-    average += sample;
+    average += sample;                      // or call average.add(sample)
 
     // display the results:
     char scratch[64] = "";
     snprintf(scratch, sizeof(scratch), "count: %4d, sample: %3d, average: %3d\n",
         average.get_count(),
         updown,
-        (int) average());
+        (int) average());                   // or call average.get_avg()
 
     Serial.print(scratch);
 }

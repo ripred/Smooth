@@ -27,13 +27,13 @@ void Smooth::set_change(FNcallback const cb)
     cbchange = cb;
 }
 
-void Smooth::set_lower(FNcallback const cb, int const value)
+void Smooth::set_lower(FNcallback const cb, double const value)
 {
     cblower = cb;
     lower = value;
 }
 
-void Smooth::set_upper(FNcallback const cb, int const value)
+void Smooth::set_upper(FNcallback const cb, double const value)
 {
     cbupper = cb;
     upper = value;
@@ -70,6 +70,12 @@ void Smooth::reset(int const window)
     set_size = window;
     count = 0;
     avg = 0.0;
+    last = 0.0;
+    lower = 0.0;
+    upper = 0.0;
+    cbchange = nullptr;
+    cblower = nullptr;
+    cbupper = nullptr;
 }
 
 // add a sample to the set and return the running average

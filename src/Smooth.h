@@ -21,7 +21,10 @@ class Smooth {
     FNcallback cblower;
     FNcallback cbupper;
 
-    double avg, last, upper, lower;
+    double avg;
+    double last;
+    double upper;
+    double lower;
 
     public:
     Smooth(int const window = 1, int const c = 0, double const a = 0.0);
@@ -29,8 +32,8 @@ class Smooth {
     void tick();
 
     void set_change(FNcallback const cb);
-    void set_lower(FNcallback const cb, int const value);
-    void set_upper(FNcallback const cb, int const value);
+    void set_lower(FNcallback const cb, double const value);
+    void set_upper(FNcallback const cb, double const value);
 
     // get the current running average
     double get_avg() const;

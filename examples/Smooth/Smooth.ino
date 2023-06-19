@@ -1,3 +1,11 @@
+/*
+ * Smooth.ino
+ * 
+ * Example of basic use of the Smooth object to  average a group of sample values
+ * 
+ * version 1.0 2023 ++trent m. wyatt
+ * 
+ */
 #include <Smooth.h>
 
 #define  SMOOTHED_SAMPLE_SIZE  10
@@ -8,30 +16,8 @@ Smooth  average(SMOOTHED_SAMPLE_SIZE);
 // Simulated moving sample
 int sample = 0;
 
-
-void on_change(double const new_value) {
-    Serial.print("on_change(");
-    Serial.print((int) new_value, DEC);
-    Serial.print(")\n");
-}
-
-void on_upper(double const new_value) {
-    Serial.print("on_lower(");
-    Serial.print((int) new_value, DEC);
-    Serial.print(")\n");
-}
-
-void on_lower(double const new_value) {
-    Serial.print("on_upper(");
-    Serial.print((int) new_value, DEC);
-    Serial.print(")\n");
-}
-
 void setup() {
     Serial.begin(115200);
-    average.set_change(on_change);
-    average.set_upper(on_lower, 256);
-    average.set_upper(on_upper, 768);
 }
 
 void loop() {

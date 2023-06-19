@@ -1,4 +1,4 @@
-# Smooth
+# Smooth Arduino Library
 Keep smooth running averages without using arrays! No arrays. No Looping. Fast and Constant Time regardless of the sample window size! 
 The sample size is adjustable at runtime. The average is available and accurate even before N samples have been received. The `Smooth` object uses 8 bytes of memory. That's it. No matter how large the window size. Perfect for smoothing and filtering signals from noisy devices **like accelerometers**!
 

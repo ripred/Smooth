@@ -29,8 +29,7 @@ class Smooth {
     public:
     Smooth(int const window = 1, int const c = 0, double const a = 0.0);
 
-    void tick();
-
+    // callback registration:
     void set_change(FNcallback const cb);
     void set_lower(FNcallback const cb, double const value);
     void set_upper(FNcallback const cb, double const value);

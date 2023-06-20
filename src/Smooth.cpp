@@ -47,7 +47,7 @@ double Smooth::get_avg() const
 }
 
 // get the total sample count
-int Smooth::get_count() const
+uint32_t Smooth::get_count() const
 {
     return count;
 }
@@ -85,7 +85,7 @@ double Smooth::add(double const val)
     double run_coef = 0;
     double val_coef = 0;
 
-    int num = ++count;
+    uint32_t num = ++count;
     //  do we need to calculate new coefficients?
     if (num > set_size) 
     {

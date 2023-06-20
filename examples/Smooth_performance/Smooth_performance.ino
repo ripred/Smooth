@@ -44,4 +44,11 @@ void loop() {
   Serial.print((int) average());
   Serial.print(", time: ");
   Serial.println(stop - start);
+
+  delay(100);
+
+  // test effect window size
+  if (average.get_count() % 15 == 0)  {
+    average.set_window(average.get_window() + 2);
+  }
 }

@@ -3,7 +3,7 @@
  * 
  * implementation file for Smooth averaging class
  * 
- * version 1.0 - June, 2023 ++trent m. wyatt
+ * version 1.6 - June, 2023 ++trent m. wyatt
  * 
  */
 #include "Smooth.h"
@@ -78,16 +78,22 @@ void Smooth::reset(int const window)
     cbupper = nullptr;
 }
 
+
 // add a sample to the set and return the running average
 double Smooth::add(double const val) 
 {
-    int num = ++count;
-    if (num > set_size) {
-        num = set_size;
-    }
+    double run_coef = 0;
+    double val_coef = 0;
 
-    double run_coef = double(num - 1) / double(num);
-    double val_coef = 1.0 / double(num);
+    int num = ++count;
+    //  do we need to calculate new coefficients?
+    if (num > set_size) 
+    {
+        num = set_size;
+        val_coef = 1.0 / double(num);
+        //   multiply is faster than divide, so reuse math
+        run_coef = double(num - 1) * val_coef; 
+    }
 
     avg = avg * run_coef + val * val_coef;
 
@@ -98,14 +104,16 @@ double Smooth::add(double const val)
             cbchange(avg);
         }
 
-        if (avg < lower) {
-            if (nullptr != cblower) {
+        // testing nullptr is faster than comparing floats
+        // so lets do that first.
+        if (nullptr != cblower) {
+            if (avg < lower) {
                 cblower(avg);
             }
         }
 
-        if (avg >= upper) {
-            if (nullptr != cbupper) {
+        if (nullptr != cbupper) {
+            if (avg >= upper) {
                 cbupper(avg);
             }
         }
@@ -113,6 +121,7 @@ double Smooth::add(double const val)
 
     return avg;
 }
+
 
 // operator overload for +=
 double Smooth::operator += (double const term) {

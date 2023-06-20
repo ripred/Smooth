@@ -92,6 +92,9 @@ double Smooth::add(double const val)
     {
       num = set_size;
     }
+
+    //  num will change when num <= set_size (due to ++count)
+    //  num will change when num > set_size and set_size has changed. (due to num = set_size)
     if (prev_num != num)
     {
       val_coef = 1.0 / double(num);

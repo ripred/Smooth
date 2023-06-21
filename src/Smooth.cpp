@@ -16,6 +16,7 @@ Smooth::Smooth(int const window, int const c, double const a) :
         last = avg;
         upper = 0.0;
         lower = 0.0;
+        cbchange = nullptr;
         cbupper = nullptr;
         cblower = nullptr;
     }
@@ -53,24 +54,24 @@ uint32_t Smooth::get_count() const
 }
 
 // get the current window size (num samples)
-int Smooth::get_window() const
+uint16_t Smooth::get_window() const
 { 
     return set_size;
 }
 
 // set the current window size (num samples)
-void   Smooth::set_window(int const size) 
+void Smooth::set_window(int const size) 
 { 
     set_size = size;
 }
 
 // reset the smoothing object
-void Smooth::reset(int const window) 
+void Smooth::reset(int const window, int const c, double const a) 
 {
     set_size = window;
-    count = 0;
-    avg = 0.0;
-    last = 0.0;
+    count = c;
+    avg   = a;
+    last  = avg;
     lower = 0.0;
     upper = 0.0;
     cbchange = nullptr;
@@ -94,12 +95,12 @@ double Smooth::add(double const val)
     }
 
     //  num will change when num <= set_size (due to ++count)
-    //  num will change when num > set_size and set_size has changed. (due to num = set_size)
+    //  num will change when num > set_size AND set_size has changed. (due to num = set_size)
     if (prev_num != num)
     {
-      //  only coef needed.
+      //  only one coef needed.
       val_coef = 1.0 / double(num);
-      //   multiply is faster than divide, so reuse math
+      //  multiply is faster than divide, so reuse math
       //  run_coef = double(num - 1) * val_coef;
       prev_num = num;
     }

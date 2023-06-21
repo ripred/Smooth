@@ -82,7 +82,7 @@ void Smooth::reset(int const window)
 // add a sample to the set and return the running average
 double Smooth::add(double const val) 
 {
-    static double run_coef = 0;
+    // static double run_coef = 0;
     static double val_coef = 0;
     static uint32_t prev_num = 0;
 
@@ -97,13 +97,17 @@ double Smooth::add(double const val)
     //  num will change when num > set_size and set_size has changed. (due to num = set_size)
     if (prev_num != num)
     {
+      //  only coef needed.
       val_coef = 1.0 / double(num);
       //   multiply is faster than divide, so reuse math
-      run_coef = double(num - 1) * val_coef;
+      //  run_coef = double(num - 1) * val_coef;
       prev_num = num;
     }
 
-    avg = avg * run_coef + val * val_coef;
+    //  replace with equivalent simpler formula
+    //  avg = avg * run_coef + val * val_coef;
+    avg += (val - avg) * val_coef;
+
 
     if (last != avg) {
         last = avg;

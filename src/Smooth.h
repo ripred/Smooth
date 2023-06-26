@@ -3,7 +3,7 @@
  * 
  * header file for Smooth averaging class
  * 
- * version 1.0 - June, 2023 ++trent m. wyatt
+ * version 1.6 - June, 2023 ++trent m. wyatt
  * 
  */
 #ifndef   SMOOTH_H_INCL
@@ -15,8 +15,9 @@ typedef void (*FNcallback)(double const /* new_value */);
 
 class Smooth {
     private:
-    int set_size;
-    int count;
+    uint16_t set_size;
+    uint32_t count;
+
     FNcallback cbchange;
     FNcallback cblower;
     FNcallback cbupper;
@@ -38,16 +39,16 @@ class Smooth {
     double get_avg() const;
 
     // get the total sample count
-    int get_count() const;
+    uint32_t get_count() const;
 
     // get the current window size (num samples)
-    int get_window() const;
+    uint16_t get_window() const;
     
     // set the current window size (num samples)
-    void   set_window(int const size);
+    void set_window(int const size);
 
     // reset the smoothing object
-    void reset(int const window);
+    void reset(int const window, int const c = 0, double const a = 0.0);
 
     // add a sample to the set and return the running average
     double add(double const val);

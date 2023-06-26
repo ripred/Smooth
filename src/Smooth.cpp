@@ -3,7 +3,7 @@
  * 
  * implementation file for Smooth averaging class
  * 
- * version 1.0 - June, 2023 ++trent m. wyatt
+ * version 1.6 - June, 2023 ++trent m. wyatt
  * 
  */
 #include "Smooth.h"
@@ -16,6 +16,7 @@ Smooth::Smooth(int const window, int const c, double const a) :
         last = avg;
         upper = 0.0;
         lower = 0.0;
+        cbchange = nullptr;
         cbupper = nullptr;
         cblower = nullptr;
     }
@@ -47,30 +48,30 @@ double Smooth::get_avg() const
 }
 
 // get the total sample count
-int Smooth::get_count() const
+uint32_t Smooth::get_count() const
 {
     return count;
 }
 
 // get the current window size (num samples)
-int Smooth::get_window() const
+uint16_t Smooth::get_window() const
 { 
     return set_size;
 }
 
 // set the current window size (num samples)
-void   Smooth::set_window(int const size) 
+void Smooth::set_window(int const size) 
 { 
     set_size = size;
 }
 
 // reset the smoothing object
-void Smooth::reset(int const window) 
+void Smooth::reset(int const window, int const c, double const a) 
 {
     set_size = window;
-    count = 0;
-    avg = 0.0;
-    last = 0.0;
+    count = c;
+    avg   = a;
+    last  = avg;
     lower = 0.0;
     upper = 0.0;
     cbchange = nullptr;
@@ -78,18 +79,36 @@ void Smooth::reset(int const window)
     cbupper = nullptr;
 }
 
+
 // add a sample to the set and return the running average
 double Smooth::add(double const val) 
 {
-    int num = ++count;
-    if (num > set_size) {
-        num = set_size;
+    // static double run_coef = 0;
+    static double val_coef = 0;
+    static uint32_t prev_num = 0;
+
+    uint32_t num = ++count;
+
+    if (num > set_size)
+    {
+      num = set_size;
     }
 
-    double run_coef = double(num - 1) / double(num);
-    double val_coef = 1.0 / double(num);
+    //  num will change when num <= set_size (due to ++count)
+    //  num will change when num > set_size AND set_size has changed. (due to num = set_size)
+    if (prev_num != num)
+    {
+      //  only one coef needed.
+      val_coef = 1.0 / double(num);
+      //  multiply is faster than divide, so reuse math
+      //  run_coef = double(num - 1) * val_coef;
+      prev_num = num;
+    }
 
-    avg = avg * run_coef + val * val_coef;
+    //  replace with equivalent simpler formula
+    //  avg = avg * run_coef + val * val_coef;
+    avg += (val - avg) * val_coef;
+
 
     if (last != avg) {
         last = avg;
@@ -98,14 +117,16 @@ double Smooth::add(double const val)
             cbchange(avg);
         }
 
-        if (avg < lower) {
-            if (nullptr != cblower) {
+        // testing nullptr is faster than comparing floats
+        // so lets do that first.
+        if (nullptr != cblower) {
+            if (avg < lower) {
                 cblower(avg);
             }
         }
 
-        if (avg >= upper) {
-            if (nullptr != cbupper) {
+        if (nullptr != cbupper) {
+            if (avg >= upper) {
                 cbupper(avg);
             }
         }
@@ -113,6 +134,7 @@ double Smooth::add(double const val)
 
     return avg;
 }
+
 
 // operator overload for +=
 double Smooth::operator += (double const term) {

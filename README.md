@@ -26,7 +26,7 @@ update: added support for change, upper and lower bounds callbacks!
 // Smoothing average object
 Smooth  average(SMOOTHED_SAMPLE_SIZE);
 
-// Simulated moving sample
+// Simulated wandering sample value
 int sample = 0;
 
 void setup() {

@@ -98,11 +98,3 @@ count:   38, sample:   3, average:   2
 count:   39, sample:   2, average:   2
 ```
 
-
-## Future
-
-- extend unit tests
-- derive from  public Printable ?
-  - allows to **Stream.print(smoothObject);**
-- use ```#pragma once``` in .h
-

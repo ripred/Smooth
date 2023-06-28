@@ -37,7 +37,7 @@ void loop() {
     // get a random -1, 0, or +1 value
     int const updown = random(0, 3) - 1;
 
-    // move our simulated sample up or down
+    // move our simulated wandering sample up or down
     sample += updown;
 
     // add it to the running average

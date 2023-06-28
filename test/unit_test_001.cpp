@@ -38,7 +38,7 @@
 
 unittest_setup()
 {
-   fprintf(stderr, "Arduino Smooth library\n");
+  fprintf(stderr, "Arduino Smooth library\n");
 }
 
 
@@ -60,7 +60,7 @@ unittest(test_constructor)
   assertEqualFloat(0, sm0.get_avg(), 0.0001);
 
   Smooth sm1(7, 20);
-  assertEqual(3, sm1.get_window());
+  assertEqual(7, sm1.get_window());
   assertEqual(20, sm1.get_count());
   assertEqualFloat(0, sm0.get_avg(), 0.0001);
 

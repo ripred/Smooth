@@ -1,6 +1,16 @@
+
+[![Arduino CI](https://github.com/ripred/Smooth/workflows/Arduino%20CI/badge.svg)](https://github.com/marketplace/actions/arduino_ci)
+[![JSON check](https://github.com/ripred/Smooth/actions/workflows/jsoncheck.yml/badge.svg)](https://github.com/ripred/Smooth/actions/workflows/jsoncheck.yml)
+[![Arduino-lint](https://github.com/ripred/Smooth/actions/workflows/arduino-lint.yml/badge.svg)](https://github.com/ripred/Smooth/actions/workflows/arduino-lint.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/ripred/Smooth/blob/master/LICENSE)
+[![GitHub release](https://img.shields.io/ripred/Smooth.svg?maxAge=3600)](https://github.com/ripred/Smooth/releases)
+
+
 # Smooth Arduino Library
 
-Keep smooth running averages without using arrays! No arrays. No Looping. Fast and Constant Time regardless of the sample window size! 
+
+Keep smooth running averages without using arrays! No arrays. No Looping. Fast and Constant Time regardless of the sample window size!
+
 The sample size is adjustable at runtime. The average is available and accurate even before N samples have been received. The `Smooth` object uses 8 bytes of memory. That's it. No matter how large the window size. Perfect for smoothing and filtering signals from noisy devices **like accelerometers**!
 
 update: added support for change, upper and lower bounds callbacks!
@@ -87,3 +97,12 @@ count:   37, sample:   3, average:   2
 count:   38, sample:   3, average:   2
 count:   39, sample:   2, average:   2
 ```
+
+
+## Future
+
+- extend unit tests
+- derive from  public Printable ?
+  - allows to **Stream.print(smoothObject);**
+- use ```#pragma once``` in .h
+

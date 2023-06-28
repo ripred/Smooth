@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## [1.6.1] - 2023-06-28
+- add Arduino build-CI
+- add unit test
+- add LINT
+- add badges to readme.md
+
+
 ## [1.6.0] - 2023-06-20
 - add changelog.md
 - improved performance **add()**

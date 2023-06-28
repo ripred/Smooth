@@ -98,7 +98,7 @@ double Smooth::add(double const val)
     //  num will change when num > set_size AND set_size has changed. (due to num = set_size)
     if (prev_num != num)
     {
-      //  only one coef needed.
+      //  only one coefficient needed.
       val_coef = 1.0 / double(num);
       //  multiply is faster than divide, so reuse math
       //  run_coef = double(num - 1) * val_coef;

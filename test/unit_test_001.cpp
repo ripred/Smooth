@@ -38,7 +38,7 @@
 
 unittest_setup()
 {
-  fprintf(stderr, "SIMON_LIB_VERSION: %s\n", (char *) SIMON_LIB_VERSION);
+   fprintf(stderr, "Arduino Smooth library\n");
 }
 
 

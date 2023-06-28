@@ -1,6 +1,5 @@
 
 [![Arduino CI](https://github.com/ripred/Smooth/workflows/Arduino%20CI/badge.svg)](https://github.com/marketplace/actions/arduino_ci)
-[![JSON check](https://github.com/ripred/Smooth/actions/workflows/jsoncheck.yml/badge.svg)](https://github.com/ripred/Smooth/actions/workflows/jsoncheck.yml)
 [![Arduino-lint](https://github.com/ripred/Smooth/actions/workflows/arduino-lint.yml/badge.svg)](https://github.com/ripred/Smooth/actions/workflows/arduino-lint.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/ripred/Smooth/blob/master/LICENSE)
 [![GitHub release](https://img.shields.io/ripred/Smooth.svg?maxAge=3600)](https://github.com/ripred/Smooth/releases)

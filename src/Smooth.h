@@ -3,7 +3,7 @@
  * 
  * header file for Smooth averaging class
  * 
- * version 1.6.1 - June, 2023 ++trent m. wyatt
+ * version 1.8.0 - August, 2023 ++trent m. wyatt
  * 
  */
 #ifndef   SMOOTH_H_INCL

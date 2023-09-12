@@ -28,27 +28,26 @@ class Smooth {
     double lower;
 
     public:
-    Smooth(int const window = 1, int const c = 0, double const a = 0.0);
+    Smooth(int const window = 1, int const counter = 0, double const a = 0.0);
 
     // callback registration:
     void set_change(FNcallback const cb);
     void set_lower(FNcallback const cb, double const value);
     void set_upper(FNcallback const cb, double const value);
 
-    // get the current running average
+    // get/set the current running average
     double get_avg() const;
+    void set_avg(double const average);
 
     // get the total sample count
     uint32_t get_count() const;
 
-    // get the current window size (num samples)
+    // get/set the current window size (num samples)
     uint16_t get_window() const;
-    
-    // set the current window size (num samples)
     void set_window(int const size);
 
     // reset the smoothing object
-    void reset(int const window, int const c = 0, double const a = 0.0);
+    void reset(int const window, int const counter = 0, double const average = 0.0);
 
     // add a sample to the set and return the running average
     double add(double const val);

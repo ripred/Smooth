@@ -8,9 +8,9 @@
  */
 #include "Smooth.h"
 
-Smooth::Smooth(int const window, int const c, double const a) :
+Smooth::Smooth(int const window, int const counter, double const a) :
         set_size(window),
-        count(c),
+        count(counter),
         avg(a)
     { 
         last = avg;
@@ -47,6 +47,11 @@ double Smooth::get_avg() const
     return avg; 
 }
 
+
+void Smooth::set_avg(double const average) {
+    avg = average;
+}
+
 // get the total sample count
 uint32_t Smooth::get_count() const
 {
@@ -66,11 +71,11 @@ void Smooth::set_window(int const size)
 }
 
 // reset the smoothing object
-void Smooth::reset(int const window, int const c, double const a) 
+void Smooth::reset(int const window, int const counter, double const average) 
 {
     set_size = window;
-    count = c;
-    avg   = a;
+    count = counter;
+    avg   = average;
     last  = avg;
     lower = 0.0;
     upper = 0.0;

@@ -13,6 +13,7 @@ Smooth	KEYWORD1
 Smooth	KEYWORD2
 add	KEYWORD2
 get_avg	KEYWORD2
+set_avg	KEYWORD2
 get_count	KEYWORD2
 get_window	KEYWORD2
 set_window	KEYWORD2

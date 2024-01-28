@@ -1,12 +1,10 @@
-
 [![Arduino CI](https://github.com/ripred/Smooth/workflows/Arduino%20CI/badge.svg)](https://github.com/marketplace/actions/arduino_ci)
 [![Arduino-lint](https://github.com/ripred/Smooth/actions/workflows/arduino-lint.yml/badge.svg)](https://github.com/ripred/Smooth/actions/workflows/arduino-lint.yml)
-[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/ripred/Smooth/blob/master/LICENSE)
+![code size:](https://img.shields.io/github/languages/code-size/ripred/Smooth)
 [![GitHub release](https://img.shields.io/github/release/ripred/Smooth.svg?maxAge=3600)](https://github.com/ripred/Smooth/releases)
-
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/ripred/Smooth/blob/master/LICENSE)
 
 # Smooth Arduino Library
-
 
 Keep smooth running averages without using arrays! No arrays. No Looping. Fast and Constant Time regardless of the sample window size!
 
@@ -14,9 +12,7 @@ The sample size is adjustable at runtime. The average is available and accurate 
 
 update: added support for change, upper and lower bounds callbacks!
 
-
 ### Example
-
 ```cpp
 #include <Arduino.h>
 #include <Smooth.h>

@@ -3,6 +3,8 @@
 ![code size:](https://img.shields.io/github/languages/code-size/ripred/Smooth)
 [![GitHub release](https://img.shields.io/github/release/ripred/Smooth.svg?maxAge=3600)](https://github.com/ripred/Smooth/releases)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/ripred/Smooth/blob/master/LICENSE)
+[![Stars](https://img.shields.io/github/stars/ripred/Smooth.svg?style=flat-square&colorB=4183c4)](https://github.com/ripred/Smooth)
+[![Forks](https://img.shields.io/github/forks/ripred/Smooth.svg?style=flat-square&colorB=4183c4)](https://github.com/ripred/Smooth)
 
 # Smooth Arduino Library
 

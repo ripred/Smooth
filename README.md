@@ -29,6 +29,7 @@ int sample = 0;
 
 void setup() {
     Serial.begin(115200);
+    randomSeed(analogRead(A0));
 }
 
 void loop() {

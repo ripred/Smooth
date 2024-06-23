@@ -14,7 +14,7 @@ The sample size is adjustable at runtime. The average is available and accurate 
 
 update: added support for change, upper and lower bounds callbacks!
 
-### Example
+### Example sketch:
 ```cpp
 #include <Arduino.h>
 #include <Smooth.h>

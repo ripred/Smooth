@@ -1,27 +1,25 @@
 {
-  "name": "Smooth",
-  "keywords": "",
-  "description": "Keep smooth running averages without using arrays! The sample size is adjustable at runtime.\nThe average is available and accurate even before N samples have been received. Now the library suppports callbacks as well for changes, lower bounds, and upper bounds.",
-  "authors":
-  [
-    {
-      "name": "Trent M. Wyatt",
-      "email": "robotics@trentwyatt.com",
-      "maintainer": true
+    "name": "Smooth",
+    "keywords": "",
+    "description": "Keep smooth running averages without using arrays! The sample size is adjustable at runtime.\nThe average is available and accurate even before N samples have been received. Now the library suppports callbacks as well for changes, lower bounds, and upper bounds.",
+    "authors": [
+        {
+            "name": "Trent M. Wyatt",
+            "email": "robotics@trentwyatt.com",
+            "maintainer": true
+        },
+        {
+            "name": "Rob Tillaart",
+            "email": "Rob.Tillaart@gmail.com"
+        }
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ripred/Smooth"
     },
-    {
-      "name": "Rob Tillaart",
-      "email": "Rob.Tillaart@gmail.com",
-    }
-  ],
-  "repository":
-  {
-    "type": "git",
-    "url": "https://github.com/ripred/Smooth"
-  },
-  "version": "1.9.0",
-  "license": "MIT",
-  "frameworks": "*",
-  "platforms": "*",
-  "headers": "Smooth.h"
+    "version": "1.9.0",
+    "license": "MIT",
+    "frameworks": "*",
+    "platforms": "*",
+    "headers": "Smooth.h"
 }

@@ -1,20 +1,27 @@
 [![Arduino CI](https://github.com/ripred/Smooth/workflows/Arduino%20CI/badge.svg)](https://github.com/marketplace/actions/arduino_ci)
 [![Arduino-lint](https://github.com/ripred/Smooth/actions/workflows/arduino-lint.yml/badge.svg)](https://github.com/ripred/Smooth/actions/workflows/arduino-lint.yml)
-![code size:](https://img.shields.io/github/languages/code-size/ripred/Smooth)
+[![JSON check](https://github.com/ripred/Smooth/actions/workflows/jsoncheck.yml/badge.svg)](https://github.com/ripred/Smooth/actions/workflows/jsoncheck.yml)
 [![GitHub release](https://img.shields.io/github/release/ripred/Smooth.svg?maxAge=3600)](https://github.com/ripred/Smooth/releases)
+[![PlatformIO Registry](https://badges.registry.platformio.org/packages/ripred/library/Smooth.svg)](https://registry.platformio.org/libraries/ripred/Smooth)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/ripred/Smooth/blob/master/LICENSE)
+
+![code size:](https://img.shields.io/github/languages/code-size/ripred/Smooth)
 [![Stars](https://img.shields.io/github/stars/ripred/Smooth.svg?style=flat-square&colorB=4183c4)](https://github.com/ripred/Smooth)
 [![Forks](https://img.shields.io/github/forks/ripred/Smooth.svg?style=flat-square&colorB=4183c4)](https://github.com/ripred/Smooth)
+
 
 # Smooth Arduino Library
 
 Keep smooth running averages without using arrays! No arrays. No Looping. Fast and Constant Time regardless of the sample window size!
 
-The sample size is adjustable at runtime. The average is available and accurate even before N samples have been received. The `Smooth` object uses 8 bytes of memory. That's it. No matter how large the window size. Perfect for smoothing and filtering signals from noisy devices **like accelerometers** and **stable potentiometer readings**!
+The sample size is adjustable at runtime. The average is available and accurate even before N samples have been received. 
+The `Smooth` object uses 8 bytes of memory. That's it. No matter how large the window size. Perfect for smoothing and filtering 
+signals from noisy devices **like accelerometers** and **stable potentiometer readings**!
 
 update: added support for change, upper and lower bounds callbacks!
 
 ### Example sketch:
+
 ```cpp
 #include <Arduino.h>
 #include <Smooth.h>

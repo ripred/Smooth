@@ -8,6 +8,10 @@
       "name": "Trent M. Wyatt",
       "email": "robotics@trentwyatt.com",
       "maintainer": true
+    },
+    {
+      "name": "Rob Tillaart",
+      "email": "Rob.Tillaart@gmail.com",
     }
   ],
   "repository":

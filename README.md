@@ -1,13 +1,11 @@
-[![Arduino CI](https://github.com/ripred/Smooth/workflows/Arduino%20CI/badge.svg)](https://github.com/marketplace/actions/arduino_ci)
+[![Arduino CI](https://github.com/ripred/Smooth/actions/workflows/arduino_test_runner.yml/badge.svg)](https://github.com/ripred/Smooth/actions/workflows/arduino_test_runner.yml)
 [![Arduino-lint](https://github.com/ripred/Smooth/actions/workflows/arduino-lint.yml/badge.svg)](https://github.com/ripred/Smooth/actions/workflows/arduino-lint.yml)
 [![JSON check](https://github.com/ripred/Smooth/actions/workflows/jsoncheck.yml/badge.svg)](https://github.com/ripred/Smooth/actions/workflows/jsoncheck.yml)
-[![GitHub release](https://img.shields.io/github/release/ripred/Smooth.svg?maxAge=3600)](https://github.com/ripred/Smooth/releases)
-[![PlatformIO Registry](https://badges.registry.platformio.org/packages/ripred/library/Smooth.svg)](https://registry.platformio.org/libraries/ripred/Smooth)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/ripred/Smooth/blob/master/LICENSE)
+[![GitHub release](https://flat.badgen.net/github/release/ripred/Smooth)](https://github.com/ripred/Smooth/releases/latest)
+[![License: MIT](https://flat.badgen.net/github/license/ripred/Smooth)](https://github.com/ripred/Smooth/blob/main/LICENSE)
 
-![code size:](https://img.shields.io/github/languages/code-size/ripred/Smooth)
-[![Stars](https://img.shields.io/github/stars/ripred/Smooth.svg?style=flat-square&colorB=4183c4)](https://github.com/ripred/Smooth)
-[![Forks](https://img.shields.io/github/forks/ripred/Smooth.svg?style=flat-square&colorB=4183c4)](https://github.com/ripred/Smooth)
+[![Stars](https://flat.badgen.net/github/stars/ripred/Smooth)](https://github.com/ripred/Smooth/stargazers)
+[![Forks](https://flat.badgen.net/github/forks/ripred/Smooth)](https://github.com/ripred/Smooth/network/members)
 
 
 # Smooth Arduino Library
@@ -102,4 +100,3 @@ count:   37, sample:   3, average:   2
 count:   38, sample:   3, average:   2
 count:   39, sample:   2, average:   2
 ```
-

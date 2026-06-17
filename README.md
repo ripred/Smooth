@@ -8,6 +8,8 @@
 [![Forks](https://flat.badgen.net/github/forks/ripred/Smooth)](https://github.com/ripred/Smooth/network/members)
 
 
+[![Arduino Library Manager](https://www.ardu-badge.com/badge/Smooth.svg)](https://www.ardu-badge.com/Smooth)
+
 # Smooth Arduino Library
 
 Keep smooth running averages without using arrays! No arrays. No Looping. Fast and Constant Time regardless of the sample window size!
